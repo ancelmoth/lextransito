@@ -1,44 +1,131 @@
+import { useState } from "react"
+
 function WhatsAppButton() {
-  const numero = "558881611828" // seu número com DDI +55
+  const [open, setOpen] = useState(false)
 
-  const mensagem = encodeURIComponent(
-    "Olá, recebi uma notificação de trânsito e gostaria de orientação sobre defesa ou recurso."
-  )
+  // 🔁 NÚMEROS (fácil de alterar no futuro)
+  const numeros = {
+    ce: "558881611828",
+    mg: "553187727273",
+    pa: "559181983436"
+  }
 
-  const link = `https://wa.me/${numero}?text=${mensagem}`
+  const gerarLink = (numero, estado) => {
+    const mensagem = `Olá! Gostaria de atendimento sobre meu caso de trânsito no estado de ${estado}.`
+    return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
+  }
 
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={styles.button}
-      aria-label="Falar com especialista em trânsito"
-    >
-      💬
-    </a>
+    <>
+      {/* Botão Flutuante */}
+      <button style={styles.floatingButton} onClick={() => setOpen(true)}>
+        💬
+      </button>
+
+      {/* Modal */}
+      {open && (
+        <div style={styles.overlay} onClick={() => setOpen(false)}>
+          <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <h3 style={styles.title}>Escolha o estado do atendimento</h3>
+
+            <a
+              href={gerarLink(numeros.ce, "Ceará")}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.option}
+            >
+              Ceará
+            </a>
+
+            <a
+              href={gerarLink(numeros.mg, "Minas Gerais")}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.option}
+            >
+              Minas Gerais
+            </a>
+
+            <a
+              href={gerarLink(numeros.pa, "Pará")}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.option}
+            >
+              Pará
+            </a>
+
+            <button style={styles.closeButton} onClick={() => setOpen(false)}>
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
 const styles = {
-  button: {
+  floatingButton: {
     position: "fixed",
     bottom: "20px",
     right: "20px",
-    backgroundColor: "#25D366",
-    color: "#fff",
-    fontSize: "28px",
     width: "60px",
     height: "60px",
     borderRadius: "50%",
+    backgroundColor: "#25D366",
+    color: "#fff",
+    fontSize: "26px",
+    border: "none",
+    cursor: "pointer",
+    boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+    zIndex: 1000
+  },
+
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0,0,0,0.5)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
-    cursor: "pointer",
-    zIndex: 1000,
+    zIndex: 1001
+  },
+
+  modal: {
+    backgroundColor: "#fff",
+    padding: "30px",
+    borderRadius: "14px",
+    width: "90%",
+    maxWidth: "350px",
+    textAlign: "center"
+  },
+
+  title: {
+    marginBottom: "20px",
+    fontSize: "18px"
+  },
+
+  option: {
+    display: "block",
+    padding: "12px",
+    marginBottom: "10px",
+    backgroundColor: "#1e3a8a",
+    color: "#fff",
+    borderRadius: "8px",
     textDecoration: "none",
-    transition: "transform 0.2s ease, box-shadow 0.2s ease"
+    fontWeight: "600"
+  },
+
+  closeButton: {
+    marginTop: "10px",
+    background: "none",
+    border: "none",
+    color: "#555",
+    cursor: "pointer"
   }
 }
 
