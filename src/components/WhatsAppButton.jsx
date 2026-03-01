@@ -1,12 +1,19 @@
 function WhatsAppButton() {
-  const numero = "5585999999999" // COLOQUE SEU NÚMERO AQUI (com DDI e DDD, só números)
+  const numero = "558881611828" // seu número com DDI +55
+
+  const mensagem = encodeURIComponent(
+    "Olá, recebi uma notificação de trânsito e gostaria de orientação sobre defesa ou recurso."
+  )
+
+  const link = `https://wa.me/${numero}?text=${mensagem}`
 
   return (
     <a
-      href={`https://wa.me/${numero}`}
+      href={link}
       target="_blank"
       rel="noopener noreferrer"
       style={styles.button}
+      aria-label="Falar com especialista em trânsito"
     >
       💬
     </a>
@@ -27,10 +34,11 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+    boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
     cursor: "pointer",
     zIndex: 1000,
-    textDecoration: "none"
+    textDecoration: "none",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease"
   }
 }
 
