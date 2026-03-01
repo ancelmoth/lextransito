@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function WhatsAppButton() {
   const [open, setOpen] = useState(false)
 
-  // 🔁 NÚMEROS (fácil de alterar no futuro)
+  // 🔁 NÚMEROS (fácil alterar depois)
   const numeros = {
     ce: "558881611828",
     mg: "553187727273",
@@ -11,22 +11,46 @@ function WhatsAppButton() {
   }
 
   const gerarLink = (numero, estado) => {
-    const mensagem = `Olá! Gostaria de atendimento sobre meu caso de trânsito no estado de ${estado}.`
+    const mensagem =
+      "Olá! Gostaria de atendimento sobre meu caso de trânsito no estado de " +
+      estado +
+      "."
     return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
   }
 
+  // 🔥 Escuta evento global para abrir o modal
+  useEffect(() => {
+    const abrir = () => setOpen(true)
+    window.addEventListener("openWhatsAppModal", abrir)
+
+    return () => {
+      window.removeEventListener("openWhatsAppModal", abrir)
+    }
+  }, [])
+
   return (
     <>
-      {/* Botão Flutuante */}
-      <button style={styles.floatingButton} onClick={() => setOpen(true)}>
+      {/* Botão flutuante */}
+      <button
+        style={styles.floatingButton}
+        onClick={() => setOpen(true)}
+      >
         💬
       </button>
 
       {/* Modal */}
       {open && (
-        <div style={styles.overlay} onClick={() => setOpen(false)}>
-          <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
-            <h3 style={styles.title}>Escolha o estado do atendimento</h3>
+        <div
+          style={styles.overlay}
+          onClick={() => setOpen(false)}
+        >
+          <div
+            style={styles.modal}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 style={styles.title}>
+              Escolha o estado do atendimento
+            </h3>
 
             <a
               href={gerarLink(numeros.ce, "Ceará")}
@@ -55,7 +79,10 @@ function WhatsAppButton() {
               Pará
             </a>
 
-            <button style={styles.closeButton} onClick={() => setOpen(false)}>
+            <button
+              style={styles.closeButton}
+              onClick={() => setOpen(false)}
+            >
               Fechar
             </button>
           </div>
