@@ -5,37 +5,61 @@ function Servicos() {
     window.dispatchEvent(new Event("openWhatsAppModal"))
   }
 
+  const servicos = [
+    "Suspensão da CNH por Pontuação",
+    "Multas Autosuspensivas",
+    "Lei Seca / Bafômetro",
+    "Defesa de CNH Provisória",
+    "Cassação da CNH",
+    "Recursos de Multas"
+  ]
+
   return (
     <PageLayout title="Serviços Especializados em Direito de Trânsito">
       <>
         <div style={styles.grid}>
+          {servicos.map((servico, index) => {
+            const destaque = servico === "Lei Seca / Bafômetro"
 
-          {[
-            "Suspensão da CNH por Pontuação",
-            "Multas Autosuspensivas",
-            "Lei Seca / Bafômetro",
-            "Defesa de CNH Provisória",
-            "Cassação da CNH",
-            "Recursos de Multas"
-          ].map((servico, index) => (
-            <div key={index} style={styles.card}>
-              <h3 style={styles.cardTitle}>{servico}</h3>
-
-              <p style={styles.cardText}>
-                Atendimento estratégico especializado em processos
-                administrativos de trânsito. Análise técnica e
-                acompanhamento até decisão final.
-              </p>
-
-              <button
-                onClick={abrirWhatsApp}
-                style={styles.cardButton}
+            return (
+              <div
+                key={index}
+                style={{
+                  ...styles.card,
+                  ...(destaque && styles.cardDestaque)
+                }}
               >
-                Falar com Especialista
-              </button>
-            </div>
-          ))}
+                {destaque && (
+                  <span style={styles.badge}>MAIOR INCIDÊNCIA</span>
+                )}
 
+                <h3
+                  style={{
+                    ...styles.cardTitle,
+                    ...(destaque && styles.cardTitleDestaque)
+                  }}
+                >
+                  {servico}
+                </h3>
+
+                <p style={styles.cardText}>
+                  Atendimento estratégico especializado em processos
+                  administrativos de trânsito. Análise técnica e
+                  acompanhamento até decisão final.
+                </p>
+
+                <button
+                  onClick={abrirWhatsApp}
+                  style={{
+                    ...styles.cardButton,
+                    ...(destaque && styles.cardButtonDestaque)
+                  }}
+                >
+                  Falar com Especialista
+                </button>
+              </div>
+            )
+          })}
         </div>
 
         {/* CTA Final */}
@@ -76,13 +100,36 @@ const styles = {
     boxShadow: "0 10px 25px rgba(0,0,0,0.05)",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    position: "relative"
+  },
+
+  /* 🔥 ESTILO ESPECIAL DO BAFÔMETRO */
+  cardDestaque: {
+    border: "2px solid #dc2626",
+    boxShadow: "0 15px 35px rgba(220,38,38,0.15)"
+  },
+
+  badge: {
+    position: "absolute",
+    top: "-12px",
+    right: "20px",
+    backgroundColor: "#dc2626",
+    color: "#fff",
+    padding: "5px 12px",
+    fontSize: "12px",
+    fontWeight: "700",
+    borderRadius: "20px"
   },
 
   cardTitle: {
     marginBottom: "15px",
     fontSize: "18px",
     fontWeight: "600"
+  },
+
+  cardTitleDestaque: {
+    color: "#dc2626"
   },
 
   cardText: {
@@ -100,6 +147,10 @@ const styles = {
     fontWeight: "600",
     border: "none",
     cursor: "pointer"
+  },
+
+  cardButtonDestaque: {
+    backgroundColor: "#dc2626"
   },
 
   ctaBox: {
