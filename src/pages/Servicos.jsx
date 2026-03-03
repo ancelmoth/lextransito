@@ -15,7 +15,7 @@ function Servicos() {
   ]
 
   return (
-    <PageLayout title="Serviços Especializados em Direito de Trânsito">
+    <PageLayout title="Defesa Administrativa de Trânsito">
       <>
         <div style={styles.grid}>
           {servicos.map((servico, index) => {
@@ -43,9 +43,9 @@ function Servicos() {
                 </h3>
 
                 <p style={styles.cardText}>
-                  Atendimento estratégico especializado em processos
-                  administrativos de trânsito. Análise técnica e
-                  acompanhamento até decisão final.
+                  Defesa administrativa completa desde a notificação
+                  até recurso em JARI e CETRAN. Atuação estratégica
+                  para evitar suspensão ou cassação da sua CNH.
                 </p>
 
                 <button
@@ -55,7 +55,7 @@ function Servicos() {
                     ...(destaque && styles.cardButtonDestaque)
                   }}
                 >
-                  Falar com Especialista
+                  Analisar meu caso agora
                 </button>
               </div>
             )
@@ -65,19 +65,19 @@ function Servicos() {
         {/* CTA Final */}
         <div style={styles.ctaBox}>
           <h3 style={styles.ctaTitle}>
-            Recebeu uma notificação?
+            Não perca o prazo do seu recurso
           </h3>
 
           <p style={styles.ctaText}>
-            Solicite agora atendimento com advogado especializado.
-            Atendimento online em Ceará, Minas Gerais e Pará.
+            O prazo para defesa é curto. Fale agora com um especialista
+            e receba orientação imediata sobre seu caso.
           </p>
 
           <button
             onClick={abrirWhatsApp}
             style={styles.ctaButton}
           >
-            Solicitar Atendimento
+            Solicitar análise imediata
           </button>
         </div>
       </>
@@ -104,7 +104,6 @@ const styles = {
     position: "relative"
   },
 
-  /* 🔥 ESTILO ESPECIAL DO BAFÔMETRO */
   cardDestaque: {
     border: "2px solid #dc2626",
     boxShadow: "0 15px 35px rgba(220,38,38,0.15)"
@@ -167,7 +166,8 @@ const styles = {
 
   ctaText: {
     marginBottom: "25px",
-    color: "#444"
+    color: "#444",
+    fontSize: "16px"
   },
 
   ctaButton: {
@@ -177,7 +177,8 @@ const styles = {
     borderRadius: "8px",
     fontWeight: "600",
     border: "none",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontSize: "16px"
   }
 }
 
