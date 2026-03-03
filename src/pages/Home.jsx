@@ -56,7 +56,7 @@ function Home() {
 
           <div style={styles.step}>
             <strong style={styles.gold}>2.</strong>
-            <p>Analisamos juridicamente a melhor estratégia.</p>
+            <p>Analisamos tecnicamente a melhor estratégia.</p>
           </div>
 
           <div style={styles.step}>
@@ -68,10 +68,10 @@ function Home() {
 
       {/* CREDIBILIDADE */}
       <section style={styles.credibilidade}>
-        <h2 style={styles.sectionTitle}>Atuação com respaldo jurídico</h2>
+        <h2 style={styles.sectionTitle}>Atuação técnica especializada</h2>
         <p style={styles.sectionText}>
-          Defesas e recursos administrativos elaborados com fundamentação técnica
-          adequada e estratégia personalizada para cada caso.
+          Defesas e recursos administrativos elaborados com fundamentação adequada
+          e estratégia personalizada para cada caso.
         </p>
       </section>
 
@@ -81,50 +81,45 @@ function Home() {
 
 const styles = {
   container: {
-    // backgroundColor: "#0b1c2d",
-    background: "linear-gradient(135deg, #081521 0%, #0b1c2d 60%, #0f2438 100%)",
-    color: "#e5e7eb",
+    background: "linear-gradient(135deg, #06121c 0%, #0b1c2d 50%, #10283f 100%)",
+    color: "#ffffff",
     minHeight: "100vh",
     padding: "0 20px 80px"
   },
 
   hero: {
-    padding: "120px 0 100px",
+    padding: "140px 0 110px",
     maxWidth: "1000px",
     margin: "0 auto",
     textAlign: "center"
   },
 
   marca: {
-    color: "#c9a646",
-    letterSpacing: "3px",
-    fontSize: "14px",
-    marginBottom: "20px"
+    color: "#d4af37",
+    letterSpacing: "4px",
+    fontSize: "13px",
+    marginBottom: "25px",
+    fontWeight: "600"
   },
 
-  // title: {
-  //   fontSize: "40px",
-  //   lineHeight: "1.2",
-  //   marginBottom: "25px",
-  //   fontWeight: "600"
-  // },
   title: {
-  fontSize: "44px",
-  lineHeight: "1.2",
-  marginBottom: "25px",
-  fontWeight: "700",
-  color: "#ffffff"
-}
+    fontSize: "48px",
+    lineHeight: "1.15",
+    marginBottom: "30px",
+    fontWeight: "800",
+    color: "#ffffff",
+    textShadow: "0px 6px 25px rgba(0,0,0,0.4)"
+  },
 
   gold: {
-    color: "#c9a646"
+    color: "#d4af37"
   },
 
   subtitle: {
-    fontSize: "18px",
-    color: "#cbd5e1",
-    marginBottom: "40px",
-    maxWidth: "750px",
+    fontSize: "19px",
+    color: "#d1d5db",
+    marginBottom: "45px",
+    maxWidth: "760px",
     marginInline: "auto"
   },
 
@@ -136,70 +131,76 @@ const styles = {
   },
 
   primaryButton: {
-    padding: "16px 32px",
-    backgroundColor: "#c9a646",
+    padding: "18px 36px",
+    backgroundColor: "#d4af37",
     color: "#0b1c2d",
-    borderRadius: "6px",
+    borderRadius: "8px",
     fontWeight: "700",
     fontSize: "15px",
     border: "none",
-    cursor: "pointer"
+    cursor: "pointer",
+    boxShadow: "0px 8px 25px rgba(212,175,55,0.35)"
   },
 
   secondaryButton: {
-    padding: "15px 30px",
-    border: "1px solid #c9a646",
-    color: "#c9a646",
-    borderRadius: "6px",
+    padding: "17px 34px",
+    border: "1.5px solid #d4af37",
+    color: "#d4af37",
+    borderRadius: "8px",
     fontWeight: "600",
     fontSize: "15px",
     textDecoration: "none"
   },
 
   alertSection: {
-    maxWidth: "900px",
-    margin: "80px auto",
-    backgroundColor: "#11263a",
-    padding: "50px",
-    borderRadius: "10px",
-    textAlign: "center"
+    maxWidth: "950px",
+    margin: "100px auto",
+    backgroundColor: "#0f2234",
+    padding: "60px",
+    borderRadius: "14px",
+    textAlign: "center",
+    boxShadow: "0px 15px 40px rgba(0,0,0,0.35)"
   },
 
   infoSection: {
-    maxWidth: "1000px",
-    margin: "100px auto"
+    maxWidth: "1100px",
+    margin: "120px auto"
   },
 
   steps: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-    gap: "30px",
-    marginTop: "40px"
+    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+    gap: "35px",
+    marginTop: "50px"
   },
 
   step: {
-    backgroundColor: "#11263a",
-    padding: "30px",
-    borderRadius: "8px"
+    backgroundColor: "#0f2234",
+    padding: "35px",
+    borderRadius: "12px",
+    boxShadow: "0px 10px 30px rgba(0,0,0,0.3)"
   },
 
   credibilidade: {
-    maxWidth: "900px",
-    margin: "100px auto 0",
-    backgroundColor: "#11263a",
-    padding: "50px",
-    borderRadius: "10px",
-    textAlign: "center"
+    maxWidth: "950px",
+    margin: "120px auto 0",
+    backgroundColor: "#0f2234",
+    padding: "60px",
+    borderRadius: "14px",
+    textAlign: "center",
+    boxShadow: "0px 15px 40px rgba(0,0,0,0.35)"
   },
 
   sectionTitle: {
-    fontSize: "28px",
-    marginBottom: "20px"
+    fontSize: "30px",
+    marginBottom: "20px",
+    fontWeight: "700"
   },
 
   sectionText: {
-    color: "#cbd5e1",
-    fontSize: "16px"
+    color: "#d1d5db",
+    fontSize: "17px",
+    lineHeight: "1.6"
   }
 }
 
