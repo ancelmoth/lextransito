@@ -8,60 +8,59 @@ function Home() {
 
   return (
     <div style={styles.container}>
-      
+
       {/* HERO */}
       <section style={styles.hero}>
+        <p style={styles.marca}>LEXTRÂNSITO ELITE</p>
+
         <h1 style={styles.title}>
-          Recebeu notificação de suspensão ou cassação da CNH?
+          Defesa Técnica Especializada para Multas de{" "}
+          <span style={styles.gold}>Alto Impacto</span>
         </h1>
 
         <p style={styles.subtitle}>
-          Defesa administrativa estratégica com atuação em recursos
-          de multa, JARI e CETRAN.
-        </p>
-
-        <p style={styles.highlight}>
-          Suspensão por pontuação • Infrações autossuspensivas • Lei Seca • CNH provisória • Cassação
+          Suspensão, Cassação, Lei Seca e infrações autossuspensivas exigem estratégia técnica precisa.
         </p>
 
         <div style={styles.buttons}>
           <button onClick={abrirWhatsApp} style={styles.primaryButton}>
-            Analisar meu caso agora
+            Falar com Especialista
           </button>
 
           <Link to="/servicos" style={styles.secondaryButton}>
-            Ver como funciona a defesa
+            Como funciona a defesa
           </Link>
         </div>
       </section>
 
       {/* BLOCO DE URGÊNCIA */}
       <section style={styles.alertSection}>
-        <h2>O prazo para defesa é limitado.</h2>
-        <p>
-          Após o recebimento da notificação, o prazo para apresentar defesa
-          é curto. Uma análise técnica rápida pode ser decisiva para evitar
-          a suspensão do seu direito de dirigir.
+        <h2 style={styles.sectionTitle}>
+          Recebeu notificação? O prazo é limitado.
+        </h2>
+        <p style={styles.sectionText}>
+          A defesa administrativa precisa ser apresentada dentro do prazo legal.
+          Uma análise técnica rápida pode evitar a suspensão do seu direito de dirigir.
         </p>
       </section>
 
       {/* COMO FUNCIONA */}
       <section style={styles.infoSection}>
-        <h2>Como Funciona</h2>
+        <h2 style={styles.sectionTitle}>Como Funciona</h2>
 
         <div style={styles.steps}>
           <div style={styles.step}>
-            <strong>1.</strong>
-            <p>Você envia sua notificação ou processo pelo WhatsApp.</p>
+            <strong style={styles.gold}>1.</strong>
+            <p>Envie sua notificação pelo WhatsApp.</p>
           </div>
 
           <div style={styles.step}>
-            <strong>2.</strong>
-            <p>Analisamos juridicamente a melhor estratégia de defesa.</p>
+            <strong style={styles.gold}>2.</strong>
+            <p>Analisamos juridicamente a melhor estratégia.</p>
           </div>
 
           <div style={styles.step}>
-            <strong>3.</strong>
+            <strong style={styles.gold}>3.</strong>
             <p>Protocolamos o recurso e acompanhamos até decisão final.</p>
           </div>
         </div>
@@ -69,114 +68,130 @@ function Home() {
 
       {/* CREDIBILIDADE */}
       <section style={styles.credibilidade}>
-        <h2>Atuação com respaldo jurídico</h2>
-        <p>
-          Defesas e recursos administrativos elaborados com acompanhamento jurídico,
-          fundamentação legal adequada e estratégia personalizada para cada caso.
+        <h2 style={styles.sectionTitle}>Atuação com respaldo jurídico</h2>
+        <p style={styles.sectionText}>
+          Defesas e recursos administrativos elaborados com fundamentação técnica
+          adequada e estratégia personalizada para cada caso.
         </p>
       </section>
+
     </div>
   )
 }
 
 const styles = {
   container: {
-    maxWidth: "1100px",
-    margin: "0 auto",
-    padding: "20px"
+    backgroundColor: "#0b1c2d",
+    color: "#e5e7eb",
+    minHeight: "100vh",
+    padding: "0 20px 80px"
   },
 
   hero: {
-    padding: "110px 0 90px",
-    textAlign: "center",
-    background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)",
-    borderRadius: "12px",
-    marginBottom: "40px"
+    padding: "120px 0 100px",
+    maxWidth: "1000px",
+    margin: "0 auto",
+    textAlign: "center"
+  },
+
+  marca: {
+    color: "#c9a646",
+    letterSpacing: "3px",
+    fontSize: "14px",
+    marginBottom: "20px"
   },
 
   title: {
-    fontSize: "34px",
-    marginBottom: "20px",
-    lineHeight: "1.3"
+    fontSize: "40px",
+    lineHeight: "1.2",
+    marginBottom: "25px",
+    fontWeight: "600"
+  },
+
+  gold: {
+    color: "#c9a646"
   },
 
   subtitle: {
     fontSize: "18px",
-    color: "#444",
-    marginBottom: "20px"
-  },
-
-  highlight: {
-    marginTop: "10px",
-    fontWeight: "600",
-    color: "#1e3a8a",
-    fontSize: "16px",
-    marginBottom: "30px"
+    color: "#cbd5e1",
+    marginBottom: "40px",
+    maxWidth: "750px",
+    marginInline: "auto"
   },
 
   buttons: {
     display: "flex",
     justifyContent: "center",
-    gap: "15px",
+    gap: "20px",
     flexWrap: "wrap"
   },
 
   primaryButton: {
-    padding: "16px 28px",
-    backgroundColor: "#1e3a8a",
-    color: "#ffffff",
-    borderRadius: "8px",
+    padding: "16px 32px",
+    backgroundColor: "#c9a646",
+    color: "#0b1c2d",
+    borderRadius: "6px",
     fontWeight: "700",
-    fontSize: "16px",
-    boxShadow: "0 6px 18px rgba(30, 58, 138, 0.30)",
+    fontSize: "15px",
     border: "none",
     cursor: "pointer"
   },
 
   secondaryButton: {
-    padding: "14px 26px",
-    border: "2px solid #1e3a8a",
-    color: "#1e3a8a",
-    borderRadius: "8px",
+    padding: "15px 30px",
+    border: "1px solid #c9a646",
+    color: "#c9a646",
+    borderRadius: "6px",
     fontWeight: "600",
-    fontSize: "16px",
-    backgroundColor: "#ffffff",
+    fontSize: "15px",
     textDecoration: "none"
   },
 
   alertSection: {
-    marginTop: "70px",
-    textAlign: "center",
-    backgroundColor: "#fff7ed",
-    padding: "40px",
-    borderRadius: "12px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+    maxWidth: "900px",
+    margin: "80px auto",
+    backgroundColor: "#11263a",
+    padding: "50px",
+    borderRadius: "10px",
+    textAlign: "center"
   },
 
   infoSection: {
-    marginTop: "90px"
+    maxWidth: "1000px",
+    margin: "100px auto"
   },
 
   steps: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-    gap: "20px",
-    marginTop: "20px"
+    gap: "30px",
+    marginTop: "40px"
   },
 
   step: {
-    backgroundColor: "#fff",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+    backgroundColor: "#11263a",
+    padding: "30px",
+    borderRadius: "8px"
   },
 
   credibilidade: {
-    marginTop: "90px",
-    backgroundColor: "#ffffff",
-    padding: "30px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+    maxWidth: "900px",
+    margin: "100px auto 0",
+    backgroundColor: "#11263a",
+    padding: "50px",
+    borderRadius: "10px",
+    textAlign: "center"
+  },
+
+  sectionTitle: {
+    fontSize: "28px",
+    marginBottom: "20px"
+  },
+
+  sectionText: {
+    color: "#cbd5e1",
+    fontSize: "16px"
   }
 }
 
