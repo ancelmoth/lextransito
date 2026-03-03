@@ -81,7 +81,8 @@ function Home() {
 
 const styles = {
   container: {
-    backgroundColor: "#0b1c2d",
+    // backgroundColor: "#0b1c2d",
+    background: "linear-gradient(135deg, #081521 0%, #0b1c2d 60%, #0f2438 100%)",
     color: "#e5e7eb",
     minHeight: "100vh",
     padding: "0 20px 80px"
@@ -101,12 +102,19 @@ const styles = {
     marginBottom: "20px"
   },
 
+  // title: {
+  //   fontSize: "40px",
+  //   lineHeight: "1.2",
+  //   marginBottom: "25px",
+  //   fontWeight: "600"
+  // },
   title: {
-    fontSize: "40px",
-    lineHeight: "1.2",
-    marginBottom: "25px",
-    fontWeight: "600"
-  },
+  fontSize: "44px",
+  lineHeight: "1.2",
+  marginBottom: "25px",
+  fontWeight: "700",
+  color: "#ffffff"
+}
 
   gold: {
     color: "#c9a646"
