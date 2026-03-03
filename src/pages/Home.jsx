@@ -1,40 +1,47 @@
 import { Link } from "react-router-dom"
 
 function Home() {
+
+  const abrirWhatsApp = () => {
+    window.dispatchEvent(new Event("openWhatsAppModal"))
+  }
+
   return (
     <div style={styles.container}>
+      
       {/* HERO */}
       <section style={styles.hero}>
         <h1 style={styles.title}>
-          Evite a suspensão ou cassação da sua CNH com defesa técnica especializada
+          Recebeu notificação de suspensão ou cassação da CNH?
         </h1>
 
         <p style={styles.subtitle}>
-          Atuação estratégica em processos administrativos de trânsito em todo o Brasil.
+          Defesa administrativa estratégica com atuação em recursos
+          de multa, JARI e CETRAN.
         </p>
 
         <p style={styles.highlight}>
-          Suspensão por pontuação • Infrações autossuspensivas • Bafômetro • CNH provisória • Cassação
+          Suspensão por pontuação • Infrações autossuspensivas • Lei Seca • CNH provisória • Cassação
         </p>
 
         <div style={styles.buttons}>
-          <Link to="/contato" style={styles.primaryButton}>
-            Falar com Especialista Agora
-          </Link>
+          <button onClick={abrirWhatsApp} style={styles.primaryButton}>
+            Analisar meu caso agora
+          </button>
 
           <Link to="/servicos" style={styles.secondaryButton}>
-            Ver Como Podemos Ajudar
+            Ver como funciona a defesa
           </Link>
         </div>
       </section>
 
-      {/* BLOCO DE URGÊNCIA (BAFÔMETRO / SUSPENSÃO) */}
+      {/* BLOCO DE URGÊNCIA */}
       <section style={styles.alertSection}>
-        <h2>Recusou o bafômetro ou recebeu notificação de suspensão?</h2>
+        <h2>O prazo para defesa é limitado.</h2>
         <p>
-          Mesmo em infrações consideradas graves ou autossuspensivas, existem
-          estratégias jurídicas que podem evitar penalidades como suspensão
-          ou cassação da CNH.
+          Após o recebimento da notificação, o prazo para apresentar defesa
+          é curto. Uma análise técnica rápida pode ser decisiva para evitar
+          a suspensão do seu direito de dirigir.
         </p>
       </section>
 
@@ -55,7 +62,7 @@ function Home() {
 
           <div style={styles.step}>
             <strong>3.</strong>
-            <p>Protocolamos o recurso e acompanhamos todo o andamento.</p>
+            <p>Protocolamos o recurso e acompanhamos até decisão final.</p>
           </div>
         </div>
       </section>
@@ -64,9 +71,8 @@ function Home() {
       <section style={styles.credibilidade}>
         <h2>Atuação com respaldo jurídico</h2>
         <p>
-          Todos os recursos e defesas são elaborados com acompanhamento jurídico,
-          garantindo fundamentação legal adequada e estratégia personalizada
-          para cada caso.
+          Defesas e recursos administrativos elaborados com acompanhamento jurídico,
+          fundamentação legal adequada e estratégia personalizada para cada caso.
         </p>
       </section>
     </div>
@@ -89,14 +95,14 @@ const styles = {
   },
 
   title: {
-    fontSize: "36px",
+    fontSize: "34px",
     marginBottom: "20px",
     lineHeight: "1.3"
   },
 
   subtitle: {
     fontSize: "18px",
-    color: "#555",
+    color: "#444",
     marginBottom: "20px"
   },
 
@@ -116,15 +122,15 @@ const styles = {
   },
 
   primaryButton: {
-    padding: "14px 26px",
+    padding: "16px 28px",
     backgroundColor: "#1e3a8a",
     color: "#ffffff",
     borderRadius: "8px",
-    fontWeight: "600",
+    fontWeight: "700",
     fontSize: "16px",
-    boxShadow: "0 4px 14px rgba(30, 58, 138, 0.25)",
-    transition: "all 0.2s ease-in-out",
-    textDecoration: "none"
+    boxShadow: "0 6px 18px rgba(30, 58, 138, 0.30)",
+    border: "none",
+    cursor: "pointer"
   },
 
   secondaryButton: {
@@ -135,7 +141,6 @@ const styles = {
     fontWeight: "600",
     fontSize: "16px",
     backgroundColor: "#ffffff",
-    transition: "all 0.2s ease-in-out",
     textDecoration: "none"
   },
 
