@@ -49,21 +49,21 @@ function Home() {
         <h2 style={styles.sectionTitleCenter}>Como Funciona</h2>
 
         <div style={styles.steps}>
-          <div style={styles.step}>
-            <strong style={styles.gold}>1.</strong>
-            <p>Envie sua notificação pelo WhatsApp.</p>
-          </div>
+  <div style={styles.step}>
+    <span style={styles.stepNumber}>1</span>
+    <p style={styles.stepText}>Envie sua notificação pelo WhatsApp.</p>
+  </div>
 
-          <div style={styles.step}>
-            <strong style={styles.gold}>2.</strong>
-            <p>Analisamos tecnicamente a melhor estratégia.</p>
-          </div>
+  <div style={styles.step}>
+    <span style={styles.stepNumber}>2</span>
+    <p style={styles.stepText}>Analisamos tecnicamente a melhor estratégia.</p>
+  </div>
 
-          <div style={styles.step}>
-            <strong style={styles.gold}>3.</strong>
-            <p>Protocolamos o recurso e acompanhamos até decisão final.</p>
-          </div>
-        </div>
+  <div style={styles.step}>
+    <span style={styles.stepNumber}>3</span>
+    <p style={styles.stepText}>Protocolamos o recurso e acompanhamos até decisão final.</p>
+  </div>
+</div>
       </section>
 
       {/* CREDIBILIDADE */}
@@ -180,6 +180,20 @@ const styles = {
     borderRadius: "16px",
     boxShadow: "0px 15px 40px rgba(0,0,0,0.35)"
   },
+
+  stepNumber: {
+  fontSize: "26px",
+  fontWeight: "800",
+  color: "#d4af37",
+  display: "block",
+  marginBottom: "15px"
+},
+
+stepText: {
+  color: "#ffffff",
+  fontSize: "17px",
+  lineHeight: "1.6"
+},
 
   credibilidade: {
     maxWidth: "1000px",
