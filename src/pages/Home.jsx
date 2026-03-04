@@ -60,10 +60,6 @@ function Home() {
             Como funciona a defesa
           </Link>
         </div>
-
-        <p style={styles.heroTrust}>
-          Foco exclusivo em defesa técnica para infrações de alto impacto
-        </p>
       </section>
 
       {/* BLOCO DE URGÊNCIA */}
@@ -160,6 +156,7 @@ const styles = {
     lineHeight: "1.1",
     marginBottom: "35px",
     fontWeight: "800",
+    color: "#ffffff",
     textShadow: "0px 8px 30px rgba(0,0,0,0.45)"
   },
 
@@ -204,14 +201,6 @@ const styles = {
     textDecoration: "none"
   },
 
-  heroTrust: {
-    marginTop: "30px",
-    fontSize: "14px",
-    letterSpacing: "1px",
-    color: "#d4af37",
-    opacity: 0.9
-  },
-
   alertSection: {
     maxWidth: "1000px",
     margin: "80px auto",
@@ -250,6 +239,7 @@ const styles = {
   },
 
   stepText: {
+    color: "#ffffff",
     fontSize: "17px",
     lineHeight: "1.6"
   },
@@ -286,6 +276,7 @@ const styles = {
 
   reviewText: {
     fontSize: "20px",
+    color: "#ffffff",
     lineHeight: "1.6",
     marginBottom: "25px"
   },
@@ -315,17 +306,20 @@ const styles = {
   sectionTitle: {
     fontSize: "34px",
     marginBottom: "25px",
-    fontWeight: "700"
+    fontWeight: "700",
+    color: "#ffffff"
   },
 
   sectionTitleCenter: {
     fontSize: "36px",
     marginBottom: "30px",
     fontWeight: "700",
-    textAlign: "center"
+    textAlign: "center",
+    color: "#ffffff"
   },
 
   sectionText: {
+    color: "#e2e8f0",
     fontSize: "18px",
     lineHeight: "1.7",
     maxWidth: "850px",
