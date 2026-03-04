@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 function Home() {
@@ -24,6 +24,15 @@ function Home() {
       author: "Cliente • Pará"
     }
   ]
+
+  // AUTO PLAY
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % reviews.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   const nextReview = () => {
     setCurrentReview((prev) => (prev + 1) % reviews.length)
@@ -52,8 +61,13 @@ function Home() {
         </p>
 
         <div style={styles.buttons}>
-          <button onClick={abrirWhatsApp} style={styles.primaryButton}>
-            Falar com Especialista
+          <button
+            onClick={abrirWhatsApp}
+            style={styles.primaryButton}
+            onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"}
+            onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
+          >
+            Analisar minha notificação agora
           </button>
 
           <Link to="/servicos" style={styles.secondaryButton}>
@@ -191,7 +205,8 @@ const styles = {
     fontSize: "16px",
     border: "none",
     cursor: "pointer",
-    boxShadow: "0px 10px 30px rgba(212,175,55,0.4)"
+    boxShadow: "0px 10px 30px rgba(212,175,55,0.4)",
+    transition: "all 0.3s ease"
   },
 
   secondaryButton: {
