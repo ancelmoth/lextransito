@@ -9,7 +9,6 @@ function Home() {
 
   // ===== CARROSSEL =====
   const [currentReview, setCurrentReview] = useState(0)
-   
 
   const reviews = [
     {
@@ -54,7 +53,7 @@ function Home() {
 
         <div style={styles.buttons}>
           <button onClick={abrirWhatsApp} style={styles.primaryButton}>
-            Analisar minha notificação agora
+            Falar com Especialista
           </button>
 
           <Link to="/servicos" style={styles.secondaryButton}>
