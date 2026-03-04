@@ -109,12 +109,12 @@ const styles = {
   },
 
   title: {
-    fontSize: "56px",
-    lineHeight: "1.1",
-    marginBottom: "35px",
-    fontWeight: "800",
-    color: "#ffffff"
-  },
+  fontSize: "clamp(32px, 6vw, 56px)",
+  lineHeight: "1.1",
+  marginBottom: "35px",
+  fontWeight: "800",
+  color: "#ffffff"
+},
 
   gold: {
     color: "#d4af37"
@@ -218,12 +218,12 @@ const styles = {
   },
 
   sectionTitleCenter: {
-    fontSize: "36px",
-    marginBottom: "30px",
-    fontWeight: "700",
-    textAlign: "center",
-    color: "#ffffff"
-  },
+  fontSize: "clamp(24px, 4vw, 36px)",
+  marginBottom: "30px",
+  fontWeight: "700",
+  textAlign: "center",
+  color: "#ffffff"
+},
 
   sectionText: {
     color: "#e2e8f0",
