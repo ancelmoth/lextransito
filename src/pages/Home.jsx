@@ -48,22 +48,28 @@ function Home() {
       <section style={styles.infoSection}>
         <h2 style={styles.sectionTitleCenter}>Como Funciona</h2>
 
-       <div style={styles.steps}>
-  <div style={styles.step}>
-    <span style={styles.stepNumber}>1</span>
-    <p style={styles.stepText}>Envie sua notificação pelo WhatsApp.</p>
-  </div>
+        <div style={styles.steps}>
+          <div style={styles.step}>
+            <span style={styles.stepNumber}>1</span>
+            <p style={styles.stepText}>
+              Envie sua notificação pelo WhatsApp.
+            </p>
+          </div>
 
-  <div style={styles.step}>
-    <span style={styles.stepNumber}>2</span>
-    <p style={styles.stepText}>Analisamos tecnicamente a melhor estratégia.</p>
-  </div>
+          <div style={styles.step}>
+            <span style={styles.stepNumber}>2</span>
+            <p style={styles.stepText}>
+              Analisamos tecnicamente a melhor estratégia.
+            </p>
+          </div>
 
-  <div style={styles.step}>
-    <span style={styles.stepNumber}>3</span>
-    <p style={styles.stepText}>Protocolamos o recurso e acompanhamos até decisão final.</p>
-  </div>
-</div>
+          <div style={styles.step}>
+            <span style={styles.stepNumber}>3</span>
+            <p style={styles.stepText}>
+              Protocolamos o recurso e acompanhamos até decisão final.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* CREDIBILIDADE */}
@@ -107,8 +113,7 @@ const styles = {
     lineHeight: "1.1",
     marginBottom: "35px",
     fontWeight: "800",
-    color: "#ffffff",
-    textShadow: "0px 8px 30px rgba(0,0,0,0.45)"
+    color: "#ffffff"
   },
 
   gold: {
@@ -158,13 +163,13 @@ const styles = {
     backgroundColor: "#0f2234",
     padding: "70px",
     borderRadius: "18px",
-    textAlign: "center",
-    boxShadow: "0px 20px 50px rgba(0,0,0,0.4)"
+    textAlign: "center"
   },
 
   infoSection: {
     maxWidth: "1200px",
-    margin: "100px auto"
+    margin: "100px auto",
+    color: "#ffffff"   // FORÇA TEXTO BRANCO AQUI
   },
 
   steps: {
@@ -181,19 +186,20 @@ const styles = {
     boxShadow: "0px 15px 40px rgba(0,0,0,0.35)"
   },
 
-      stepNumber: {
-  fontSize: "26px",
-  fontWeight: "800",
-  color: "#d4af37",
-  display: "block",
-  marginBottom: "15px"
-},
+  stepNumber: {
+    fontSize: "26px",
+    fontWeight: "800",
+    color: "#d4af37",
+    display: "block",
+    marginBottom: "15px"
+  },
 
-stepText: {
-  color: "#ffffff",
-  fontSize: "17px",
-  lineHeight: "1.6"
-},
+  stepText: {
+    color: "#ffffff",  // GARANTE BRANCO
+    fontSize: "17px",
+    lineHeight: "1.6",
+    opacity: 1         // REMOVE QUALQUER TRANSPARÊNCIA
+  },
 
   credibilidade: {
     maxWidth: "1000px",
@@ -201,8 +207,7 @@ stepText: {
     backgroundColor: "#0f2234",
     padding: "70px",
     borderRadius: "18px",
-    textAlign: "center",
-    boxShadow: "0px 20px 50px rgba(0,0,0,0.4)"
+    textAlign: "center"
   },
 
   sectionTitle: {
