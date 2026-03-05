@@ -21,7 +21,7 @@ function Header() {
   return (
     <header style={styles.header}>
       <div style={styles.container}>
-        <h2 style={styles.logo}>LexTrânsito</h2>
+        <h2 style={styles.logo}>LexTrânsito Elite</h2>
 
         {isMobile && (
           <button
