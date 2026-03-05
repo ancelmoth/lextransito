@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f4f6f9;
-  color: #1e1e1e;
+  background-color: #06121c; /* mesmo fundo do site */
+  color: #ffffff;
 }
 
 a {
