@@ -17,24 +17,14 @@ a {
   color: inherit;
 }
 
-h1 {
-  font-size: 38px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #111827;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #1f2937;
+h1, h2, h3, h4 {
+  color: inherit;
 }
 
 p {
   margin-bottom: 15px;
   line-height: 1.7;
-  color: #4b5563;
+  color: inherit;
 }
 
 ul {
